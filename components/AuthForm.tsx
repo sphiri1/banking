@@ -49,10 +49,10 @@ const AuthForm = ({ type }: { type: string }) => {
           lastName : data.lastName!,
           address1: data.address1!,
           city: data.city!,
-          state: data.state!,
-          postalCode: data.postalCode!,
+          state: 'NY',
+          postalCode: '12345',
           dateOfBirth: data.dateOfBirth!,
-          ssn: data.ssn!,
+          ssn: '1234',
           email: data.email,
           password: data.password
         }
@@ -148,13 +148,13 @@ const AuthForm = ({ type }: { type: string }) => {
                   control={form.control}
                   name='state'
                   label='State'
-                  placeholder='Example: ON' />
+                  placeholder='Example: NY' />
 
                 <CustomInput
                   control={form.control}
                   name='postalCode'
                   label='Postal Code'
-                  placeholder='Example: A1B2C3' />
+                  placeholder='Example: 12345' />
                 </div>
               
               <div className='flex gap-4'>
@@ -162,13 +162,13 @@ const AuthForm = ({ type }: { type: string }) => {
                   control={form.control}
                   name='dateOfBirth'
                   label='Date of Birth'
-                  placeholder='Example: YYYY/MM/DD' />
+                  placeholder='Example: YYYY-MM-DD' />
 
                 <CustomInput
                   control={form.control}
                   name='ssn'
                   label='SSN'
-                  placeholder='Example: 123' />
+                  placeholder='Example: 1234' />
               </div>
               </>
             )}

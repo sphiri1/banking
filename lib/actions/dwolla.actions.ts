@@ -18,7 +18,7 @@ const getEnvironment = (): "production" | "sandbox" => {
 };
 
 const dwollaClient = new Client({
-  environment: getEnvironment(),
+  environment: 'sandbox',
   key: process.env.DWOLLA_KEY as string,
   secret: process.env.DWOLLA_SECRET as string,
 });
@@ -54,11 +54,13 @@ export const createOnDemandAuthorization = async () => {
 export const createDwollaCustomer = async (
   newCustomer: NewDwollaCustomerParams
 ) => {
+
   try {
     return await dwollaClient
       .post("customers", newCustomer)
       .then((res) => res.headers.get("location"));
   } catch (err) {
+    console.log(newCustomer, 'new customer')
     console.error("Creating a Dwolla Customer Failed: ", err);
   }
 };
